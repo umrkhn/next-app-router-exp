@@ -1,14 +1,11 @@
-import { PlusIcon } from '@heroicons/react/24/outline';
+import TodoForm from '../components/TodoForm';
 
 export default function Home() {
   return (
-    <main>
-      <button className='btn'>
-        <PlusIcon className='icon-light' />
-      </button>
-      <button className='btn btn-lg'>
-        <PlusIcon className='icon-light' />
-      </button>
+    <main className='h-screen flex justify-center items-center mx-12'>
+      <div className='w-full max-w-3xl px-8'>
+        <TodoForm />
+      </div>
     </main>
   );
 }
