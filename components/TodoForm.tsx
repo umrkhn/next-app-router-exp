@@ -2,16 +2,12 @@
 import { useState, FormEvent } from 'react';
 import { PlusIcon } from '@heroicons/react/24/outline';
 
-interface FormValues {
-  todo: string;
-}
-
 const initialValue = {
   todo: '',
 };
 
 export default function TodoForm() {
-  const [formValues, setFormValues] = useState<FormValues>(initialValue);
+  const [formValues, setFormValues] = useState(initialValue);
 
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,6 +21,7 @@ export default function TodoForm() {
         className='input mr-8 w-full placeholder:capitalize text-center'
         type='text'
         placeholder='type something...'
+        value={formValues.todo}
         onChange={(e) => setFormValues({ todo: e.target.value })}
       />
       <button className='btn btn-lg'>
